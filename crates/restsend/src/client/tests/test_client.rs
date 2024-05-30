@@ -54,11 +54,11 @@ pub(super) struct TestMessageCakllbackImpl {
 }
 
 impl callback::MessageCallback for TestMessageCakllbackImpl {
-    fn on_progress(&self, progress: u64, total: u64) {
-        warn!("on_progress: {}/{}", progress, total);
-    }
     fn on_sent(&self) {
         self.is_sent.store(true, Ordering::Relaxed);
+    }
+    fn on_progress(&self, progress: u64, total: u64) {
+        warn!("on_progress: {}/{}", progress, total);
     }
     fn on_ack(&self, _req: crate::request::ChatRequest) {
         self.is_ack.store(true, Ordering::Relaxed);

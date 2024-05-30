@@ -13,6 +13,8 @@ desktop = []
 indexeddb = ["web"]
 
 [dependencies]
+prost = "0.12"
+prost-types = "0.12"
 restsend-macros = { path = "../restsend-macros" }
 uniffi = { version = "0.27.1", features = ["tokio", "build", "cli"] }
 uniffi_bindgen = "0.27.1"
@@ -90,6 +92,7 @@ camino = "1.1.6"
 tempdir = "0.3.7"
 openssl = { version = "0.10.64", features = ["vendored"] }
 rusqlite = { version = "0.31.0", features = ["bundled"] }
+tokio-tcp = { version = "0.1.4" }
 tokio-websockets = { version = "0.8.0", features = [
     "native-tls",
     "client",
